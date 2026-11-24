@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090711">
+<title>BO DZ — Gaming Store Demo</title>
+<style>
+:root{--bg:#090711;--panel:#151222;--panel2:#1c1730;--purple:#9b5cff;--violet:#6d35d4;--text:#f7f2ff;--muted:#aaa0bd;--line:#302643;--green:#65dda7}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#38205f 0,#100c1b 38%,#090711 75%);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,sans-serif;padding-bottom:90px}
+header{position:sticky;top:0;z-index:5;background:#0d0a16ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:13px 17px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:950;font-size:25px;letter-spacing:1px}.logo span{color:#b98aff}.sub{font-size:10px;color:var(--muted);letter-spacing:3px;margin-top:-4px}
+.pill{border:1px solid #60428e;border-radius:99px;padding:7px 11px;color:#d9c3ff;font-size:12px}
+main{max-width:760px;margin:auto;padding:16px}
+.hero{border:1px solid #57368b;border-radius:22px;padding:24px 20px;background:linear-gradient(125deg,#2a1648,#171126 55%,#301a50);box-shadow:0 12px 38px #0007;overflow:hidden;position:relative}
+.hero:after{content:"✦";position:absolute;font-size:130px;color:#ffffff0b;right:15px;top:-24px}
+.eyebrow{color:#c5a5ff;font-weight:700;font-size:11px;letter-spacing:2px}.hero h1{font-size:30px;line-height:1.15;margin:10px 0}.hero p{color:#c8bdd8;max-width:390px;line-height:1.5}.btn{border:0;border-radius:12px;padding:12px 16px;background:linear-gradient(100deg,#a86aff,#7139d8);color:white;font-weight:800;cursor:pointer}.btn.secondary{background:#292139;border:1px solid #55416e}.btn:disabled{opacity:.45;cursor:not-allowed}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:15px 0}.stat,.card,.panel{background:linear-gradient(145deg,#1a1528,#110e1b);border:1px solid var(--line);border-radius:16px;padding:14px}.stat b{display:block;font-size:18px}.stat small{color:var(--muted);font-size:11px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 12px}.section-head h2{font-size:18px;margin:0}.muted{color:var(--muted)}
+.chips{display:flex;gap:8px;overflow:auto;padding:2px 0 8px}.chip{border:1px solid var(--line);border-radius:99px;padding:8px 13px;background:#171222;color:#d9cde9;white-space:nowrap;cursor:pointer}.chip.active{background:#6e3bc1;border-color:#a875ff;color:white}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product{padding:0;overflow:hidden}.art{height:112px;background:radial-gradient(circle at 50% 40%,#7747b4,#24183b 58%,#141020);display:grid;place-items:center;font-size:42px}.product-body{padding:12px}.tag{font-size:10px;color:#c6a4ff;letter-spacing:1px;font-weight:800}.product h3{margin:5px 0;font-size:15px}.price{font-weight:900;color:#d6b7ff;margin:8px 0}.product .btn{width:100%;padding:10px;font-size:12px}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:10;background:#100c1cf5;border-top:1px solid #3a2b52;display:flex;justify-content:space-around;padding:9px 4px calc(9px + env(safe-area-inset-bottom));backdrop-filter:blur(15px)}
+nav button{background:none;border:0;color:#9d93ad;font-size:10px;font-weight:700;display:grid;gap:4px;justify-items:center;min-width:54px;cursor:pointer}nav button strong{font-size:20px}nav button.active{color:#c49aff}
+.page{display:none}.page.active{display:block}
+.field{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0d0a14;color:white;margin:7px 0 13px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.history-item{padding:13px 0;border-bottom:1px solid var(--line)}.status{color:var(--green);font-size:12px}
+.chatbox{height:290px;overflow:auto;background:#0d0a14;border:1px solid var(--line);border-radius:13px;padding:12px}.bubble{background:#261b38;border-radius:12px;padding:9px 11px;margin:8px 0;max-width:85%;width:max-content}.bubble.me{margin-left:auto;background:#59339a}.notice{border:1px dashed #7954a7;color:#cbb8e6;border-radius:12px;padding:12px;font-size:12px;line-height:1.5;margin-top:14px}
+@media(min-width:600px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:34px}.hero h1{font-size:38px}}
+</style></head>
+<body>
+<header><div><div class="logo">BO <span>DZ</span></div><div class="sub">GAMING STORE</div></div><div class="pill">✦ BẢN DEMO</div></header>
+<main>
+<section id="home" class="page active">
+ <div class="hero"><div class="eyebrow">WELCOME TO BO DZ</div><h1>Trải nghiệm<br>thế giới gaming</h1><p>Cửa hàng số phong cách gaming. Đây là bản mẫu để xem bố cục và thử thao tác.</p><button class="btn" onclick="go('shop')">Khám phá cửa hàng ↗</button></div>
+ <div class="stats"><div class="stat"><b>0 xu</b><small>Số dư mẫu</small></div><div class="stat"><b>02</b><small>Danh mục</small></div><div class="stat"><b>24/7</b><small>Hỗ trợ mẫu</small></div></div>
+ <div class="section-head"><h2>Danh mục nổi bật</h2><span class="muted">BO DZ</span></div>
+ <div class="chips"><button class="chip active" onclick="go('shop')">✦ BASIC</button><button class="chip" onclick="go('shop')">♛ VIP</button><button class="chip" onclick="go('chat')">☏ Cộng đồng</button></div>
+ <div class="notice">Dữ liệu, sản phẩm, số dư và đơn hàng trên trang này đều là minh họa; không phát sinh giao dịch thật.</div>
+</section>
+<section id="shop" class="page">
+ <div class="section-head"><h2>Cửa hàng</h2><span class="muted">Sản phẩm mẫu</span></div>
+ <div class="chips"><button class="chip active" onclick="filter('all',this)">Tất cả</button><button class="chip" onclick="filter('BASIC',this)">BASIC</button><button class="chip" onclick="filter('VIP',this)">VIP</button></div>
+ <div class="products" id="products">
+  <article class="card product" data-type="BASIC"><div class="art">🎮</div><div class="product-body"><div class="tag">BASIC · MẪU 01</div><h3>Sản phẩm BASIC</h3><div class="muted">Mô tả và hình ảnh sẽ cập nhật</div><div class="price">50 xu</div><button class="btn" onclick="buy('Sản phẩm BASIC',50)">Mua thử</button></div></article>
+  <article class="card product" data-type="VIP"><div class="art">👑</div><div class="product-body"><div class="tag">VIP · MẪU 01</div><h3>Sản phẩm VIP</h3><div class="muted">Mô tả và hình ảnh sẽ cập nhật</div><div class="price">150 xu</div><button class="btn" onclick="buy('Sản phẩm VIP',150)">Mua thử</button></div></article>
+  <article class="card product" data-type="BASIC"><div class="art">✨</div><div class="product-body"><div class="tag">BASIC · MẪU 02</div><h3>Sản phẩm BASIC 02</h3><div class="muted">Sản phẩm minh họa</div><div class="price">80 xu</div><button class="btn" onclick="buy('Sản phẩm BASIC 02',80)">Mua thử</button></div></article>
+ </div>
+</section>
+<section id="wallet" class="page"><div class="section-head"><h2>Ví xu</h2><span class="pill">Demo</span></div><div class="panel"><div class="muted">Số dư hiện tại</div><div style="font-size:32px;font-weight:900;margin:4px 0 15px" id="balance">0 xu</div><label>Số tiền nạp thử (VNĐ)</label><input class="field" id="amount" type="number" min="1000" step="1000" value="10000"><div class="notice">QR chỉ là phần minh họa. Chưa kết nối ngân hàng, không quét để chuyển tiền.</div><button class="btn" style="margin-top:13px;width:100%" onclick="alert('Bản demo chưa nhận thanh toán thật.')">Tạo mã QR mẫu</button></div></section>
+<section id="history" class="page"><div class="section-head"><h2>Lịch sử mua</h2><span class="muted" id="count">0 đơn</span></div><div class="panel"><div class="muted">Tài khoản đã mua</div><div style="font-size:27px;font-weight:900" id="purchased">0 sản phẩm</div><hr style="border-color:var(--line)"><div class="muted">Số tiền đã tiêu</div><div style="font-size:24px;font-weight:900" id="spent">0 xu</div></div><div class="panel" style="margin-top:12px" id="orders"><div class="muted">Chưa có đơn hàng mẫu. Bạn có thể bấm “Mua thử” trong cửa hàng để xem lịch sử hoạt động.</div></div></section>
+<section id="chat" class="page"><div class="section-head"><h2>CHAT cộng đồng</h2><span class="status">● Demo</span></div><div class="chatbox" id="messages"><div class="bubble"><b>BO DZ</b><br>Chào mừng bạn đến với cộng đồng BO DZ! 💜</div><div class="bubble">Đây là giao diện chat minh họa.</div></div><div class="row" style="margin-top:9px"><input class="field" id="msg" placeholder="Nhập tin nhắn mẫu..." style="margin:0"><button class="btn" onclick="sendMsg()">Gửi</button></div><div class="notice">Tin nhắn chỉ lưu tạm trong phiên trình duyệt, chưa có chat nhiều người dùng.</div></section>
+<section id="account" class="page"><div class="section-head"><h2>Tài khoản</h2></div><div class="panel"><div style="font-size:36px">👤</div><h3>Khách BO DZ</h3><div class="muted">Tài khoản xem thử · chưa đăng nhập</div><button class="btn secondary" style="margin-top:14px" onclick="alert('Đăng nhập thật sẽ được bổ sung khi có backend.')">Đăng nhập (mẫu)</button></div><div class="panel" style="margin-top:12px"><div class="row"><span>Ví xu</span><b id="balance2">0 xu</b></div><div class="row" style="margin-top:13px"><span>Lịch sử mua</span><button class="btn secondary" onclick="go('history')">Xem lịch sử</button></div></div></section>
+<section id="admin" class="page"><div class="section-head"><h2>ADMIN · Bản xem trước</h2><span class="pill">Chỉ giao diện</span></div><div class="panel"><b>Quản lý cửa hàng</b><p class="muted">Thêm sản phẩm mẫu, chỉnh giá và trạng thái sẽ cần hệ thống quản trị có xác thực phía máy chủ.</p><button class="btn secondary" onclick="alert('Chức năng quản trị chưa kết nối backend.')">Thêm sản phẩm mẫu</button></div></section>
+</main>
+<nav>
+<button class="active" data-page="home" onclick="go('home')"><strong>⌂</strong>Trang chủ</button>
+<button data-page="shop" onclick="go('shop')"><strong>▦</strong>Cửa hàng</button>
+<button data-page="wallet" onclick="go('wallet')"><strong>◉</strong>Ví xu</button>
+<button data-page="history" onclick="go('history')"><strong>◷</strong>Lịch sử</button>
+<button data-page="account" onclick="go('account')"><strong>♙</strong>Tài khoản</button>
+</nav>
+<script>
+let balance=0,orders=[];
+function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));window.scrollTo(0,0)}
+function filter(type,btn){document.querySelectorAll('.chips .chip').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.product').forEach(p=>p.style.display=type==='all'||p.dataset.type===type?'':'none')}
+function buy(name,price){if(!confirm('Đây là mua thử trong bản demo. Tạo đơn minh họa '+name+'?'))return;orders.unshift({name,price,id:'BDZ-'+Math.random().toString(36).slice(2,8).toUpperCase(),date:new Date().toLocaleString('vi-VN')});render();alert('Đã tạo đơn hàng minh họa. Không có thanh toán hoặc sản phẩm thật.');go('history')}
+function render(){let spent=orders.reduce((s,o)=>s+o.price,0);document.getElementById('count').textContent=orders.length+' đơn';document.getElementById('purchased').textContent=orders.length+' sản phẩm';document.getElementById('spent').textContent=spent+' xu';document.getElementById('balance').textContent=balance+' xu';document.getElementById('balance2').textContent=balance+' xu';document.getElementById('orders').innerHTML=orders.length?orders.map(o=>`<div class="history-item"><div class="row"><b>${o.name}</b><span class="status">Đơn mẫu</span></div><div class="muted" style="font-size:12px">Mã: ${o.id}<br>${o.date}</div><b>${o.price} xu</b><p class="muted" style="font-size:12px">Thông tin bàn giao không có trong bản demo.</p></div>`).join(''):'<div class="muted">Chưa có đơn hàng. Hãy thử tạo đơn mẫu trong cửa hàng.</div>'}
+function sendMsg(){let v=document.getElementById('msg').value.trim();if(!v)return;let b=document.createElement('div');b.className='bubble me';b.textContent=v;document.getElementById('messages').appendChild(b);document.getElementById('msg').value='';document.getElementById('messages').scrollTop=99999}
+</script></body></html>
